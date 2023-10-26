@@ -1,31 +1,49 @@
--- import telescope plugin safely
-local telescope_setup, telescope = pcall(require, "telescope")
-if not telescope_setup then
-	return
-end
+return {
+  "nvim-telescope/telescope.nvim",
+  branch = "0.1.x",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+    "nvim-tree/nvim-web-devicons",
+  },
 
--- import telescope actions safely
-local actions_setup, actions = pcall(require, "telescope.actions")
-if not actions_setup then
-	return
-end
+  ------------------------
+  -- DEF PLUGIN OPTIONS --
+  ------------------------
+  config = function()
+    local telescope = require("telescope")
+    local actions = require("telescope.actions")
 
--- configure telescope
-telescope.setup({
-	-- configure custom mappings
-	defaults = {
-		preview_cutoff = 1,
-		mappings = {
-			i = {
-				["<C-k>"] = actions.move_selection_previous, -- move to prev result
-				["<C-j>"] = actions.move_selection_next, -- move to next result
-				["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist, -- send selected to quickfixlist
-			},
-		},
-	},
-	-- pickers = {
-	-- 	find_files = {
-	-- 		theme = "dropdown",
-	-- 	},
-	-- },
-})
+    telescope.setup({
+      defaults = {
+        file_ignore_patterns = {
+          ".json",
+        },
+        path_display = { "truncate " },
+
+        ------------------
+        -- DEF MAPPINGS --
+        ------------------
+        mappings = {
+          i = {
+            ["<C-k>"] = actions.move_selection_previous, -- move to prev result
+            ["<C-j>"] = actions.move_selection_next, -- move to next result
+            ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+          },
+        },
+      },
+    })
+    telescope.load_extension("fzf") -- load fzf native for faster parsing
+
+    -----------------
+    -- DEF KEYMAPS --
+    -----------------
+    local keymap = vim.keymap -- for conciseness
+
+    keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
+    keymap.set("n", "<leader>fh", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
+    keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
+    keymap.set("n", "<leader>fc", "<cmd>Telescope current_buffer_fuzzy_find<cr>", { desc = "Fuzzy find string in current buffer" })
+    keymap.set("n", "<leader>fk", "<cmd>Telescope keymaps<cr>", {desc = "List normal mode keymaps"})
+  end,
+}
