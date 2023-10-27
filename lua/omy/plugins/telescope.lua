@@ -28,6 +28,7 @@ return {
           i = {
             ["<C-k>"] = actions.move_selection_previous, -- move to prev result
             ["<C-j>"] = actions.move_selection_next, -- move to next result
+            ["<C-c>"] = actions.close, -- close in insert mode
             ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
           },
         },
