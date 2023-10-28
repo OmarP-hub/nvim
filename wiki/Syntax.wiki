@@ -1,0 +1,5 @@
+Basic vim syntax
+
+* <C-x> = Ctrl - x
+* <CR> = Enter
+* <leader> = space

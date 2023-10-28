@@ -29,11 +29,11 @@ local function foldTextFormatter(virtText, lnum, endLnum, width, truncate)
 end
 
 return {
-  {
-    "chrisgrieser/nvim-origami",
-    event = "BufReadPost",
-    opts = true,
-  },
+  -- {
+  --   "chrisgrieser/nvim-origami",
+  --   event = "BufReadPost",
+  --   opts = true,
+  -- },
   {
     "jghauser/fold-cycle.nvim",
     vim.keymap.set("n", "zC", function() return require("fold-cycle").close() end, { silent = true, desc = " Cycle-Close Folds" })

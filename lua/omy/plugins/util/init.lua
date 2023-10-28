@@ -6,4 +6,6 @@ return {
   "inkarkat/vim-ReplaceWithRegister", -- replace with register contents using motion (gr + motion)
 
   "lewis6991/gitsigns.nvim", -- show git line modifications on left hand side
+
+  "vimwiki/vimwiki", -- create and edit wiki files 
 }

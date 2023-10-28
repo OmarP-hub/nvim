@@ -18,12 +18,18 @@ return {
       defaults = {
         file_ignore_patterns = {
           ".json",
+
+          -- java files
+          ".class",
+          ".xml",
+          ".lst",
+          ".form",
         },
         path_display = { "truncate " },
 
-        ------------------
-        -- DEF MAPPINGS --
-        ------------------
+        ----------------------------------
+        --------- DEF MAPPINGS -----------
+        ----------------------------------
         mappings = {
           i = {
             ["<C-k>"] = actions.move_selection_previous, -- move to prev result
@@ -36,9 +42,9 @@ return {
     })
     telescope.load_extension("fzf") -- load fzf native for faster parsing
 
-    -----------------
-    -- DEF KEYMAPS --
-    -----------------
+    ----------------------------------
+    ---------- DEF KEYMAPS ----------- 
+    ----------------------------------
     local keymap = vim.keymap -- for conciseness
 
     keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })

@@ -34,18 +34,14 @@ keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tabvim.g.mapleadae
 
 ----------------------
 -- Personal Keybinds
-----------------------
 
 keymap.set("n", "<CR>", "m`o<ESC>``", { desc = "Inserts a new line under the cursor" })
-vim.keymap.set(
-	"n",
-	"<leader>O",
-	"<Cmd>call append(line('.') - 1, repeat([''], v:count1))<CR>",
-	{ desc = "Inserts new lines under the cursor with a motion" }
-)
-vim.keymap.set(
-	"n",
-	"<leader>o",
-	"<Cmd>call append(line('.'),     repeat([''], v:count1))<CR>",
-	{ desc = "Inserts new lines above the cursor with a motion" }
-)
+keymap.set("n", "<leader>O", "<Cmd>call append(line('.') - 1, repeat([''], v:count1))<CR>",
+	{ desc = "Inserts new lines under the cursor with a motion" })
+keymap.set("n", "<leader>o", "<Cmd>call append(line('.'),     repeat([''], v:count1))<CR>",
+	{ desc = "Inserts new lines above the cursor with a motion" })
+
+opts.desc = "Go down and center screen"
+keymap.set("n", "<C-d>", "<C-d>zz", opts)
+opts.desc = "Go up and center screen"
+keymap.set("n", "<C-u>", "<C-u>zz", opts)

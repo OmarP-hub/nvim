@@ -14,14 +14,10 @@ return {
     vim.g.loaded = 1
     vim.g.loaded_netrwPlugin = 1
     
-    -- change color for arrows in tree to light blue
-    -- vim.cmd([[ highlight NvimTreeIndentMarker guifg=#98971a ]])
-    
     -- configure nvim-tree
     nvimtree.setup({
       view = {
         width = 35,
-        -- relativenumber = true,  
       },
     	-- change folder arrow icons
     	renderer = {
@@ -52,6 +48,7 @@ return {
           ".DS_Store",
           ".json",
           "^.git",
+          ".class",
         },
       },
       git = {
@@ -59,9 +56,9 @@ return {
       },
     })
 
-    -----------------
-    -- DEF KEYMAPS --
-    -----------------
+    ----------------------------------
+    ---------- DEF KEYMAPS ----------- 
+    ----------------------------------
     local keymap = vim.keymap -- for conciseness 
 
     keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" }) -- toggle file explorer
