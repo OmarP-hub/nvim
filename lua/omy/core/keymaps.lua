@@ -42,6 +42,7 @@ keymap.set("n", "<leader>o", "<Cmd>call append(line('.'),     repeat([''], v:cou
 	{ desc = "Inserts new lines above the cursor with a motion" })
 
 opts.desc = "Go down and center screen"
-keymap.set("n", "<C-d>", "<C-d>zz", opts)
+keymap.set("n", "<C-d>", "<C-d>zz", opts) -- go to the end of the screen and center the screen 
 opts.desc = "Go up and center screen"
-keymap.set("n", "<C-u>", "<C-u>zz", opts)
+keymap.set("n", "<C-u>", "<C-u>zz", opts) -- go to the start of the screen and center the screen
+keymap.set("n", "0", "^", opts) -- change 0 from moving to start of the line to first non blank character in a line
