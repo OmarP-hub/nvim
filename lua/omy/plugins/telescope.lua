@@ -52,5 +52,6 @@ return {
     keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
     keymap.set("n", "<leader>fc", "<cmd>Telescope current_buffer_fuzzy_find<cr>", { desc = "Fuzzy find string in current buffer" })
     keymap.set("n", "<leader>fk", "<cmd>Telescope keymaps<cr>", {desc = "List normal mode keymaps"})
+    keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", {desc = "List open buffers"})
   end,
 }

@@ -32,17 +32,34 @@ keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
 keymap.set("n", "<leader>tn", ":tabn<CR>") --  go to next tab
 keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tabvim.g.mapleadaer = " "
 
+opts.desc = "Go to tab 1"
+keymap.set("n", "<leader>1", "1gt", opts);
+
+opts.desc = "Go to tab 2"
+keymap.set("n", "<leader>2", "2gt", opts);
+
+opts.desc = "Go to tab 3"
+keymap.set("n", "<leader>3", "3gt", opts);
+
+opts.desc = "Go to tab 4"
+keymap.set("n", "<leader>4", "4gt", opts);
+
 ----------------------
 -- Personal Keybinds
+----------------------
 
 keymap.set("n", "<CR>", "m`o<ESC>``", { desc = "Inserts a new line under the cursor" })
+
 keymap.set("n", "<leader>O", "<Cmd>call append(line('.') - 1, repeat([''], v:count1))<CR>",
 	{ desc = "Inserts new lines under the cursor with a motion" })
+
 keymap.set("n", "<leader>o", "<Cmd>call append(line('.'),     repeat([''], v:count1))<CR>",
 	{ desc = "Inserts new lines above the cursor with a motion" })
 
 opts.desc = "Go down and center screen"
 keymap.set("n", "<C-d>", "<C-d>zz", opts) -- go to the end of the screen and center the screen 
+
 opts.desc = "Go up and center screen"
 keymap.set("n", "<C-u>", "<C-u>zz", opts) -- go to the start of the screen and center the screen
+
 keymap.set("n", "0", "^", opts) -- change 0 from moving to start of the line to first non blank character in a line

@@ -29,6 +29,11 @@ return {
           "vim",     -- REQUIRED
           "vimdoc",  -- REQUIRED
           "query",   -- REQUIRED
+          "java",
+          "bash",
+          "cpp",
+          "make",
+          "comment",
           "json",
           "markdown",
           "markdown_inline",

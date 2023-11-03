@@ -3,16 +3,22 @@ return {
     "catppuccin/nvim",
     priority = 1000,
 
-    config = function()
+    config = function() -- comentario
       require("catppuccin").setup({
         flavour = "macchiato",
+        styles = {
+          comments = { "italic" },
+        },
         integrations = {
           alpha = true,
-          
           telescope = {
             enabled = true,
             style = "nvchad",
           },
+          cmp = true, 
+          treesitter = true,
+          nvimtree = true,
+          vimwiki = true,
           native_lsp = {
             enabled = true,
             virtual_text = {

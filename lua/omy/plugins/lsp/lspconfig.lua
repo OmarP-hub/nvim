@@ -4,8 +4,8 @@
 vim.g.myLsps = {
   "lua_ls",
   "clangd",
-  "jdtls",
-}
+  "jdtls", -- TODO: Use jdtls from nvim-jdtls to 
+}          -- support lsp for entire project
 
 ---------------------------------
 -- LSP CONFIGURATION FUNCTIONS --
@@ -52,6 +52,9 @@ local function setupAllLsps()
 
     opts.desc = "Show line diagnostics"
     keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
+
+    opts.desc = "Smart rename"
+    keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
   end
 
   for lsp, serverConfig in pairs(serverConfigs) do
