@@ -44,6 +44,15 @@ keymap.set("n", "<leader>3", "3gt", opts);
 opts.desc = "Go to tab 4"
 keymap.set("n", "<leader>4", "4gt", opts);
 
+opts.desc = "Go to tab 5"
+keymap.set("n", "<leader>5", "5gt", opts);
+
+opts.desc = "Go to tab 6"
+keymap.set("n", "<leader>6", "6gt", opts);
+
+opts.desc = "Go to tab 7"
+keymap.set("n", "<leader>7", "7gt", opts);
+
 ----------------------
 -- Personal Keybinds
 ----------------------

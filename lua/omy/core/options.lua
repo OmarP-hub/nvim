@@ -26,3 +26,6 @@ opt.background = "dark"
 
 -- clipboard
 opt.clipboard = "unnamedplus"
+
+-- enable gf cmd with .java files
+opt.suffixesadd=".java"
