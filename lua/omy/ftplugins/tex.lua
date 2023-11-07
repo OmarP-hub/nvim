@@ -4,12 +4,9 @@ return{
 
   config = function ()
     vim.g.vimtex_view_method = "skim"
-    vim.cmd[[
-      let g:vimtex_compiler_latexmk_engines = {
-          \ '_'                : '-xelatex', 
-          \}
-    ]]
-    vim.cmd[[ let maplocalleader = "," ]]
+    vim.g.vimtex_compiler_latexmk_engines = {["_"] = "-lualatex"}
+    vim.g.maplocalleader = ","
+
     vim.cmd[[
       function! s:TexFocusVim() abort
         silent execute "!open -a iTerm2"
