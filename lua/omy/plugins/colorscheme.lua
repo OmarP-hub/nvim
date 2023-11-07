@@ -17,6 +17,7 @@ return {
           },
           cmp = true, 
           treesitter = true,
+          treesitter_context = true,
           nvimtree = true,
           vimwiki = true,
           native_lsp = {

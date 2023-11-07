@@ -11,9 +11,11 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({ { import = "omy.plugins" },  
+require("lazy").setup({
+    {import = "omy.plugins"},  
     {import = "omy.plugins.util"},
-    {import = "omy.plugins.lsp"}
+    {import = "omy.plugins.lsp"},
+    {import = "omy.ftplugins"}
   }, {
   install = {
     colorscheme = { "catppuccin" },

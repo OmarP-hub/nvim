@@ -33,6 +33,7 @@ return {
           "bash",
           "cpp",
           "make",
+          "latex",
           "comment",
           "json",
           "markdown",
