@@ -74,3 +74,6 @@ keymap.set("n", "<C-u>", "<C-u>zz", opts) -- go to the start of the screen and c
 keymap.set("n", "0", "^", opts) -- change 0 from moving to start of the line to first non blank character in a line
 
 keymap.set("n", "<leader>qc", "<cmd>cclose<CR>", { desc = "Close the quickfix" })
+
+keymap.set("n", "q", "<nop>", opts)
+keymap.set("n", "Q", "<nop>", opts)

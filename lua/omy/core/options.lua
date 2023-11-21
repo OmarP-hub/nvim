@@ -29,3 +29,4 @@ opt.clipboard = "unnamedplus"
 
 -- enable gf cmd with .java files
 opt.suffixesadd=".java"
+opt.suffixesadd=".hpp"
