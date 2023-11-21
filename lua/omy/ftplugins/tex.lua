@@ -3,9 +3,11 @@ return{
   ft = "tex",
 
   config = function ()
-    vim.g.vimtex_view_method = "skim"
-    vim.g.vimtex_compiler_latexmk_engines = {["_"] = "-lualatex"}
     vim.g.maplocalleader = ","
+    vim.g.vimtex_compiler_latexmk_engines = {["_"] = "-lualatex"}
+    vim.g.vimtex_compiler_latexmk = { ["aux_dir"] = "./build" }
+    vim.g.vimtex_view_method = "skim"
+    vim.g.vimtex_quickfix_mode = 0
 
     vim.cmd[[
       function! s:TexFocusVim() abort

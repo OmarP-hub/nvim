@@ -57,6 +57,13 @@ return {
       })
     })
 
+    cmp.setup.filetype("tex", {
+      sources = {
+        { name = "vimtex" },
+        { name = "buffer" },
+      },
+    })
+
     cmp.setup({
       completion = {
         completeopt = "menu,menuone,preview,noselect",

@@ -4,6 +4,7 @@
 vim.g.myLsps = {
   "lua_ls",
   "clangd",
+  "texlab",
   "jdtls", -- TODO: Use jdtls from nvim-jdtls to 
 }          -- support lsp for entire project
 
@@ -55,6 +56,10 @@ local function setupAllLsps()
 
     opts.desc = "Smart rename"
     keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+
+    opts.desc = "See available code actions"
+    keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
+
   end
 
   for lsp, serverConfig in pairs(serverConfigs) do
