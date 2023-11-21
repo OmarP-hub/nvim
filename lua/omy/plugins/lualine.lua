@@ -13,17 +13,18 @@ return {
     -- section for lazy status 
     lualine.setup({
       options = {
-        theme = "catppuccin", 
+        theme = "gruvbox-flat", 
       },
       sections = {
+        lualine_y = {},
         lualine_x = {
           {
             lazy_status.updates,
             cond = lazy_status.has_updates,
             color = { fg = "#ff9e64" },
           },
-          { "encoding" },
-          { "fileformat" },
+          -- { "encoding" },
+          -- { "fileformat" },
           { "filetype" },
         },
       },

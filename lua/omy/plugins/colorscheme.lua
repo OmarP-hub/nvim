@@ -1,5 +1,14 @@
 return {
   {
+    "eddyekofo94/gruvbox-flat.nvim",
+    priority = 1000,
+    enabled = true,
+    config = function ()
+      vim.g.gruvbox_flat_style = "hard"
+      vim.cmd[[colorscheme gruvbox-flat]]
+    end
+  },
+  {
     "catppuccin/nvim",
     priority = 1000,
 
@@ -40,7 +49,17 @@ return {
           },
         },
       })
-      vim.cmd([[colorscheme catppuccin]])
     end,
+  },
+  {
+    "neanias/everforest-nvim",
+    version = false,
+    lazy = false,
+    priority = 1000,
+    config = function ()
+      require("everforest").setup({
+        background = "soft",
+      })
+    end
   },
 }
